@@ -5,20 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Page</title>
     <style>
-        /* กำหนดให้ iframe มีความกว้างเท่ากับหน้าจอ */
+        /* ตั้งค่า iframe ให้มีความกว้างเต็มหน้าจอ และความสูงตามต้องการ */
         iframe {
-            width: 100vw; /* 100% ของความกว้างหน้าจอ */
-            height: 500px; /* ความสูงของ iframe, สามารถปรับได้ */
-            border: 2px solid black; /* กำหนดกรอบให้ iframe */
+            display: block; /* ทำให้ iframe แสดงผลเป็น block (ไม่เป็น inline) */
+            width: 100vw;   /* ความกว้าง 100% ของหน้าจอ */
+            height: 100vh;  /* ความสูง 100% ของหน้าจอ */
+            border: none;   /* ลบเส้นขอบของ iframe */
+        }
+        body {
+            margin: 0; /* เอา margin ออกเพื่อให้ iframe ขยายเต็มหน้าจอ */
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to the test page</h1>
 
-    <!-- Iframe ที่จะขยายความกว้างเต็มหน้าจอ -->
-    <iframe src="https://copilotstudio.microsoft.com/environments/Default-9c8f3faf-b1a9-4105-86a7-5df2a6776838/bots/cr437_copilot1/webchat?__version__=2" 
-    frameborder="0"></iframe>
+    <!-- Iframe ที่จะขยายเต็มหน้าจอ -->
+    <iframe src="https://copilotstudio.microsoft.com/environments/Default-9c8f3faf-b1a9-4105-86a7-5df2a6776838/bots/cr437_copilot1/webchat?__version__=2"></iframe>
 
 </body>
 </html>
