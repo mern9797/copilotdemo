@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
-    <style>
-        /* ตั้งค่า iframe ให้มีความกว้างเต็มหน้าจอ และความสูงตามต้องการ */
-        iframe {
-            display: block; /* ทำให้ iframe แสดงผลเป็น block (ไม่เป็น inline) */
-            width: 100vw;   /* ความกว้าง 100% ของหน้าจอ */
-            height: 100vh;  /* ความสูง 100% ของหน้าจอ */
-            border: none;   /* ลบเส้นขอบของ iframe */
-        }
-        body {
-            margin: 0; /* เอา margin ออกเพื่อให้ iframe ขยายเต็มหน้าจอ */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Copilot Studio Agent Webpage</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Iframe ที่จะขยายเต็มหน้าจอ -->
-    <iframe src="https://copilotstudio.microsoft.com/environments/Default-9c8f3faf-b1a9-4105-86a7-5df2a6776838/bots/cr437_copilot1/webchat?__version__=2"></iframe>
-
+  <h1>Copilot Studio Agent</h1>
+  <iframe src="https://default2ee15019526a4503bfde6f9d55c5c8.07.environment.api.powerplatform.com/copilotstudio/dataverse-backed/authenticated/bots/cr10f_biolabInfoAssistant/conversations?api-version=2022-03-01-preview"></iframe>
 </body>
 </html>
+
+
