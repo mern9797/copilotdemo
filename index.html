@@ -2,20 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Copilot Studio Agent Webpage</title>
   <style>
-    body { font-family: Arial, sans-serif; }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #0078D4;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+
     iframe {
       width: 100%;
-      height: 600px;
+      max-width: 1200px;
+      height: 80vh;
       border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #f4f4f4;
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        height: 70vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      iframe {
+        height: 60vh;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Copilot Studio Agent</h1>
-  <iframe src="https://default2ee15019526a4503bfde6f9d55c5c8.07.environment.api.powerplatform.com/copilotstudio/dataverse-backed/authenticated/bots/cr10f_biolabInfoAssistant/conversations?api-version=2022-03-01-preview"></iframe>
+  <header>
+    <h1>Copilot Studio Agent</h1>
+  </header>
+  <main>
+    <iframe src="https://copilotstudio.microsoft.com/environments/Default-2ee15019-526a-4503-bfde-6f9d55c5c807/bots/cr10f_biolabInfoAssistant/webchat?__version__=2"></iframe>
+  </main>
+  <footer>
+    © 2025 Your Company | Powered by Microsoft Copilot Studio
+  </footer>
 </body>
-</html>
-
-
