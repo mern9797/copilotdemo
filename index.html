@@ -1,59 +1,88 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Copilot Studio Agent Webpage</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    :root {
+      --brand: #0078D4;
+      --bg: #ffffff;
+      --footer-bg: #f4f4f4;
+      --text: #1a1a1a;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
       margin: 0;
       padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+    }
+
+    body {
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
     header {
-      background-color: #0078D4;
+      background-color: var(--brand);
       color: white;
       text-align: center;
       padding: 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.25rem;
     }
 
     main {
       flex: 1;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       padding: 1rem;
+    }
+
+    /* ใช้ container เพื่อควบคุมสัดส่วน iframe */
+    .iframe-container {
+      width: 100%;
+      max-width: 1200px;
+      /* ทำให้สูงพอดีกับ viewport ลบ header/footer */
+      min-height: calc(100vh - 160px);
+      /* เงาและมุมโค้งเหมือนเดิม */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      overflow: hidden; /* ให้มุมโค้งมีผลกับ iframe */
+      background: #fff;
     }
 
     iframe {
       width: 100%;
-      max-width: 1200px;
-      height: 80vh;
+      height: 100%;
       border: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
+      display: block;
     }
 
     footer {
-      background-color: #f4f4f4;
+      background-color: var(--footer-bg);
       text-align: center;
-      padding: 0.5rem;
+      padding: 0.75rem;
       font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
-      iframe {
-        height: 70vh;
+      .iframe-container {
+        min-height: calc(100vh - 140px);
       }
     }
-
     @media (max-width: 480px) {
-      iframe {
-        height: 60vh;
+      .iframe-container {
+        min-height: calc(100vh - 120px);
       }
     }
   </style>
@@ -62,11 +91,13 @@
   <header>
     <h1>Copilot Studio Agent</h1>
   </header>
+
   <main>
-    <iframe src="https://default3ef2736c83214a95b4630bffbe2617.64.environment.api.powerplatform.com/copilotstudio/dataverse-backed/authenticated/bots/crb64_mJetsAgent/conversations?api-version=2022-03-01-preview"></iframe>
-  </main>
-  <footer>
-    © 2025 Your Company | Powered by Microsoft Copilot Studio
-  </footer>
-</body>
-</html>
+    <div class="iframe-container">
+      <!-- ใช้ลิงก์ webchat ตามที่ต้องการ -->
+      <iframe
+        src="https://copilotstudio.microsoft.com/environments/Default-3ef2736c-8321-4a95-b463-0bffbe261764/bots/crb64_mJetsAgent/webchat?__version__=2"
+        title="Copilot Studio Webchat"
+        allow="clipboard-read; clipboard-write"
+        referrerpolicy="strict-origin-when-cross-origin"
+        sandbox="allow-forms allow-scripts allow-same-origin allow-popups"
